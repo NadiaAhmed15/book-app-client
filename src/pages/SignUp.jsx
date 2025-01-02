@@ -1,6 +1,8 @@
+
+
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
 const SignUp = () => {
@@ -25,9 +27,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="mx-4 my-4">Sign Up</h1>
-      <div className="p-4">
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+      <div className="card shadow-lg p-4" style={{ maxWidth: '400px', width: '100%' }}>
+        <h1 className="text-center mb-4">Sign Up</h1>
         <div className="form-group">
           <label htmlFor="username">Username</label>
           <input
@@ -57,16 +59,17 @@ const SignUp = () => {
             id="password"
             className="form-control"
             value={password}
-            onChange={(e) => setPassword(e.target.value) }
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
           />
         </div>
-        <button className="btn btn-primary mt-3" onClick={handleSignUp}>
+        <button className="btn btn-primary w-100 mt-3" onClick={handleSignUp}>
           Sign Up
         </button>
-        <div>
-
-            <p className='mx-4 '>Already have an account ?<link to ='/'> Login</link></p>
+        <div className="text-center mt-3">
+          <p>
+            Already have an account? <Link to="/">Login</Link>
+          </p>
         </div>
       </div>
     </div>
@@ -74,3 +77,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
