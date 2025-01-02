@@ -1,3 +1,5 @@
+
+
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +24,7 @@ const CreateBooks = () => {
     }
 
     axios
-      .post('https://book-app-server-beige.vercel.app//books2/', formData)
+      .post('http://localhost:1111/books2/', formData)
       .then(() => {
         enqueueSnackbar('Book created successfully', { variant: 'success' });
         navigate('/home'); // Redirect to the homepage or books list page
@@ -33,10 +35,11 @@ const CreateBooks = () => {
       });
   };
 
+
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
-      style={{ backgroundColor: "#f8f9fa" }} // Optional background color
+      style={{ backgroundColor: "#f8f9fa" }}
     >
       <div
         className="border rounded shadow p-4 bg-light"
@@ -63,7 +66,7 @@ const CreateBooks = () => {
               />
             </div>
           </div>
-  
+
           {/* Author Input */}
           <div className="mb-3 row align-items-center">
             <label htmlFor="author" className="col-sm-2 col-form-label text-end">
@@ -80,7 +83,7 @@ const CreateBooks = () => {
               />
             </div>
           </div>
-  
+
           {/* Publish Year Input */}
           <div className="mb-3 row align-items-center">
             <label htmlFor="publishYear" className="col-sm-2 col-form-label text-end">
@@ -97,7 +100,7 @@ const CreateBooks = () => {
               />
             </div>
           </div>
-  
+
           {/* Image Upload */}
           <div className="mb-4">
             <label htmlFor="image" className="form-label text-gray-500">
@@ -110,7 +113,7 @@ const CreateBooks = () => {
               onChange={(e) => setImage(e.target.files[0])}
             />
           </div>
-  
+
           {/* Save Button */}
           <div className="row">
             <div className="col-sm-10 offset-sm-2">
@@ -127,7 +130,7 @@ const CreateBooks = () => {
       </div>
     </div>
   );
-  
 };
 
 export default CreateBooks;
+
